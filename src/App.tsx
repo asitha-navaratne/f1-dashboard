@@ -1,5 +1,23 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import Layout from "./layout/Layout";
+import Seasons from "./pages/Seasons";
+
 function App() {
-  return <div></div>;
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          index: true,
+          element: <Seasons />,
+        },
+      ],
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }
 
 export default App;
