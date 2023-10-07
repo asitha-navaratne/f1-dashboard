@@ -5,6 +5,7 @@ nav {
   border-radius: 15px;
   position: relative;
   left: 2.5vw;
+  top: 0vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -12,15 +13,37 @@ nav {
 }
 
 .nav-link {
-  padding: 10px;
+  padding: 0.7em 0.8em;
 }
 
 .nav-link-active {
-  background-color: #ff7070;
-  padding: 10px;
-  border-radius: 50%;
+  background-color: #ab1111;
+  padding: 0.7em 0.8em;
+  border-radius: 100%;
 }
 
 .nav-link-image {
-  width: 25px;
+  width: 2em;
+}
+
+@media (max-width: 1000px) and (orientation: portrait) {
+  nav {
+    height: 6vh;
+    width: 60vw;
+    left: 0vw;
+    top: -3vh;
+    flex-direction: row;
+  }
+
+  .nav-link {
+    padding: 0.3em 0.4em;
+  }
+
+  .nav-link-active {
+    padding: 0.3em 0.4em;
+  }
+
+  .nav-link-image {
+    width: 1em;
+  }
 }
