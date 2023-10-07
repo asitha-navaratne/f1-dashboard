@@ -13,31 +13,41 @@ const MainNavigation = () => {
     <nav>
       <NavLink
         to="/"
-        className={({ isActive }) => (isActive ? styles["active"] : undefined)}
+        className={({ isActive }) =>
+          isActive ? styles["nav-link-active"] : styles["nav-link"]
+        }
       >
         <img src={seasons} alt="Seasons" className={styles["nav-link-image"]} />
       </NavLink>
       <NavLink
         to="/teams"
-        className={({ isActive }) => (isActive ? styles["active"] : undefined)}
+        className={({ isActive }) =>
+          isActive ? styles["nav-link-active"] : styles["nav-link"]
+        }
       >
         <img src={teams} alt="Teams" className={styles["nav-link-image"]} />
       </NavLink>
       <NavLink
         to="/drivers"
-        className={({ isActive }) => (isActive ? styles["active"] : undefined)}
+        className={({ isActive }) =>
+          isActive ? styles["nav-link-active"] : styles["nav-link"]
+        }
       >
         <img src={drivers} alt="Drivers" className={styles["nav-link-image"]} />
       </NavLink>
       <NavLink
         to="/races"
-        className={({ isActive }) => (isActive ? styles["active"] : undefined)}
+        className={({ isActive }) =>
+          isActive ? styles["nav-link-active"] : styles["nav-link"]
+        }
       >
         <img src={races} alt="Races" className={styles["nav-link-image"]} />
       </NavLink>
       <NavLink
         to="/tracks"
-        className={({ isActive }) => (isActive ? styles["active"] : undefined)}
+        className={({ isActive }) =>
+          isActive ? styles["nav-link-active"] : styles["nav-link"]
+        }
       >
         <img src={tracks} alt="Tracks" className={styles["nav-link-image"]} />
       </NavLink>

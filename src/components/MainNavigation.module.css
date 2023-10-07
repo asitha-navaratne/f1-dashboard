@@ -11,8 +11,12 @@ nav {
   align-items: center;
 }
 
-.active {
-  background-color: #db5757;
+.nav-link {
+  padding: 10px;
+}
+
+.nav-link-active {
+  background-color: #ca3f3f;
   padding: 10px;
   border-radius: 50%;
 }
