@@ -1,0 +1,13 @@
+main {
+  background-color: #fff;
+  width: 90vw;
+  height: 90vh;
+  border-radius: 10px;
+}
+
+.layout {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

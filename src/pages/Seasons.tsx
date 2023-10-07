@@ -1,5 +1,5 @@
 const Seasons = () => {
-  return <div>Seasons Tab</div>;
+  return <div></div>;
 };
 
 export default Seasons;
