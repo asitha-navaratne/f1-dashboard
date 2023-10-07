@@ -1,0 +1,22 @@
+nav {
+  height: 60vh;
+  width: 5vw;
+  background-color: #fe9595;
+  border-radius: 15px;
+  position: relative;
+  left: 2.5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.active {
+  background-color: #db5757;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.nav-link-image {
+  width: 25px;
+}

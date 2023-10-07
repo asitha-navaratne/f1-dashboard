@@ -3,12 +3,3 @@ body {
   box-sizing: border-box;
   background-color: #ffe0e0;
 }
-
-nav {
-  height: 60vh;
-  width: 5vw;
-  background-color: #fe9595;
-  border-radius: 15px;
-  position: relative;
-  left: 2.5vw;
-}
