@@ -3,6 +3,10 @@ main {
   width: 90vw;
   height: 90vh;
   border-radius: 10px;
+  position: relative;
+  top: 0vh;
+  left: -2.5vw;
+  z-index: -1;
 }
 
 .layout {
@@ -12,9 +16,13 @@ main {
   align-items: center;
 }
 
-@media (max-width: 1000px) and (orientation: portrait) {
+@media (orientation: portrait) {
+  main {
+    top: 3vh;
+    left: 0vw;
+  }
+
   .layout {
-    margin-top: 2vh;
     flex-direction: column-reverse;
   }
 }
