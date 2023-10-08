@@ -10,13 +10,13 @@ nav {
   position: relative;
 }
 
-.nav-link {
+.nav-link,
+.nav-link-active {
   padding: 0.7em 0.8em;
 }
 
 .nav-link-active {
   background-color: #ab1111;
-  padding: 0.7em 0.8em;
   border-radius: 100%;
 }
 
@@ -25,10 +25,7 @@ nav {
 }
 
 @media (min-width: 300px) and (max-width: 1000px) {
-  .nav-link {
-    padding: 0.3em 0.4em;
-  }
-
+  .nav-link,
   .nav-link-active {
     padding: 0.3em 0.4em;
   }
@@ -39,10 +36,7 @@ nav {
 }
 
 @media (min-width: 1000px) and (max-width: 1500px) {
-  .nav-link {
-    padding: 0.4em 0.5em;
-  }
-
+  .nav-link,
   .nav-link-active {
     padding: 0.4em 0.5em;
   }
@@ -53,10 +47,7 @@ nav {
 }
 
 @media (min-width: 1500px) {
-  .nav-link {
-    padding: 0.7em 0.8em;
-  }
-
+  .nav-link,
   .nav-link-active {
     padding: 0.7em 0.8em;
   }
@@ -73,10 +64,7 @@ nav {
     flex-direction: row;
   }
 
-  .nav-link {
-    padding: 0.3em 0.4em;
-  }
-
+  .nav-link,
   .nav-link-active {
     padding: 0.3em 0.4em;
   }
@@ -87,10 +75,7 @@ nav {
 }
 
 @media (min-width: 800px) and (orientation: portrait) {
-  .nav-link {
-    padding: 0.5em 0.6em;
-  }
-
+  .nav-link,
   .nav-link-active {
     padding: 0.5em 0.6em;
   }
