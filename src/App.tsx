@@ -1,11 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Layout from "./layout/Layout";
-import Seasons from "./pages/Seasons";
-import Teams from "./pages/Teams";
-import Drivers from "./pages/Drivers";
-import Races from "./pages/Races";
-import Tracks from "./pages/Tracks";
+import Layout from "./layout/Layout.element";
+import Seasons from "./pages/Seasons/Seasons.element";
+import Teams from "./pages/Teams/Teams.element";
+import Drivers from "./pages/Drivers/Drivers.element";
+import Races from "./pages/Races/Races.element";
+import Tracks from "./pages/Tracks/Tracks.element";
+
+import { loader as seasonsLoader } from "./pages/Seasons/Seasons.loader";
 
 function App() {
   const router = createBrowserRouter([
@@ -16,6 +18,7 @@ function App() {
         {
           index: true,
           element: <Seasons />,
+          loader: seasonsLoader,
         },
         {
           path: "/teams",
