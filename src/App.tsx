@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Layout from "./layout/Layout.element";
@@ -10,6 +11,20 @@ import Tracks from "./pages/Tracks/Tracks.element";
 import { loader as seasonsLoader } from "./pages/Seasons/Seasons.loader";
 
 function App() {
+  useEffect(() => {
+    const { fetch: originalRequest } = window;
+    window.fetch = async (...args) => {
+      const [resource, config] = args;
+
+      const response = await originalRequest(resource, {
+        ...config,
+        headers: { "x-apisports-key": import.meta.env.REACT_APP_APISPORTS_KEY },
+      });
+
+      return response;
+    };
+  }, []);
+
   const router = createBrowserRouter([
     {
       path: "/",
