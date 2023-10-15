@@ -6,7 +6,6 @@ main {
   position: relative;
   top: 0vh;
   left: -2.5vw;
-  z-index: -1;
 }
 
 .layout {
