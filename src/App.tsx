@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import Layout from "./layout/Layout.element";
 import Seasons from "./pages/Seasons/Seasons.element";
@@ -8,22 +8,8 @@ import Drivers from "./pages/Drivers/Drivers.element";
 import Races from "./pages/Races/Races.element";
 import Tracks from "./pages/Tracks/Tracks.element";
 
-import { loader as seasonsLoader } from "./pages/Seasons/Seasons.loader";
-
 function App() {
-  useEffect(() => {
-    const { fetch: originalRequest } = window;
-    window.fetch = async (...args) => {
-      const [resource, config] = args;
-
-      const response = await originalRequest(resource, {
-        ...config,
-        headers: { "x-apisports-key": import.meta.env.REACT_APP_APISPORTS_KEY },
-      });
-
-      return response;
-    };
-  }, []);
+  const queryClient = new QueryClient();
 
   const router = createBrowserRouter([
     {
@@ -33,7 +19,6 @@ function App() {
         {
           index: true,
           element: <Seasons />,
-          loader: seasonsLoader,
         },
         {
           path: "/teams",
@@ -55,7 +40,11 @@ function App() {
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  );
 }
 
 export default App;
