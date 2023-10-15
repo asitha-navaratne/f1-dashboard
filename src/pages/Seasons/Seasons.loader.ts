@@ -3,7 +3,7 @@ import AxiosInstance from "../../api/axios";
 import ApiCallException from "../../errors/ApiException";
 
 export default async function loader() {
-  const response = await AxiosInstance.get("/seas");
+  const response = await AxiosInstance.get("/seasons");
 
   if (response.data.errors.token) {
     const error = new ApiCallException(
