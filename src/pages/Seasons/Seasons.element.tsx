@@ -9,10 +9,7 @@ const Seasons = () => {
     staleTime: 10000,
   });
 
-  console.log("data", data);
-  console.log("isPending", isPending);
-  console.log("isError", isError);
-  console.log("error", error);
+  console.log(data, isPending, isError, error);
 
   return <div></div>;
 };
