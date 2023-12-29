@@ -9,48 +9,51 @@ import races from "../../assets/images/location.png";
 import tracks from "../../assets/images/race-track.png";
 
 const MainNavigation = () => {
+  const pages = [
+    {
+      title: "Seasons",
+      url: "/",
+      image: seasons,
+    },
+    {
+      title: "Teams",
+      url: "/teams",
+      image: teams,
+    },
+    {
+      title: "Drivers",
+      url: "/drivers",
+      image: drivers,
+    },
+    {
+      title: "Races",
+      url: "/races",
+      image: races,
+    },
+    {
+      title: "Tracks",
+      url: "/tracks",
+      image: tracks,
+    },
+  ];
+
   return (
     <nav>
-      <NavLink
-        to="/"
-        className={({ isActive }) =>
-          isActive ? styles["nav-link-active"] : styles["nav-link"]
-        }
-      >
-        <img src={seasons} alt="Seasons" className={styles["nav-link-image"]} />
-      </NavLink>
-      <NavLink
-        to="/teams"
-        className={({ isActive }) =>
-          isActive ? styles["nav-link-active"] : styles["nav-link"]
-        }
-      >
-        <img src={teams} alt="Teams" className={styles["nav-link-image"]} />
-      </NavLink>
-      <NavLink
-        to="/drivers"
-        className={({ isActive }) =>
-          isActive ? styles["nav-link-active"] : styles["nav-link"]
-        }
-      >
-        <img src={drivers} alt="Drivers" className={styles["nav-link-image"]} />
-      </NavLink>
-      <NavLink
-        to="/races"
-        className={({ isActive }) =>
-          isActive ? styles["nav-link-active"] : styles["nav-link"]
-        }
-      >
-        <img src={races} alt="Races" className={styles["nav-link-image"]} />
-      </NavLink>
-      <NavLink
-        to="/tracks"
-        className={({ isActive }) =>
-          isActive ? styles["nav-link-active"] : styles["nav-link"]
-        }
-      >
-        <img src={tracks} alt="Tracks" className={styles["nav-link-image"]} />
-      </NavLink>
+      {pages.map((page) => (
+        <NavLink
+          key={page.title}
+          to={page.url}
+          className={({ isActive }) =>
+            isActive ? styles["nav-link-active"] : styles["nav-link"]
+          }
+        >
+          <img
+            src={page.image}
+            alt={page.title}
+            className={styles["nav-link-image"]}
+          />
+        </NavLink>
+      ))}
     </nav>
   );
 };
