@@ -1,4 +1,6 @@
-const Drivers = () => {
+import { FC } from "react";
+
+const Drivers: FC = () => {
   return <div></div>;
 };
 

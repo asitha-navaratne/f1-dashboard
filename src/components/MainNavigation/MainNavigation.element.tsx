@@ -1,3 +1,5 @@
+import { FC } from "react";
+
 import { NavLink } from "react-router-dom";
 
 import styles from "./MainNavigation.module.css";
@@ -8,7 +10,7 @@ import drivers from "../../assets/images/helmet.png";
 import races from "../../assets/images/location.png";
 import tracks from "../../assets/images/race-track.png";
 
-const MainNavigation = () => {
+const MainNavigation: FC = () => {
   const pages = [
     {
       title: "Seasons",
