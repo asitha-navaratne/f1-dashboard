@@ -1,23 +1,16 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 
 import { useQuery } from "@tanstack/react-query";
+import { Dropdown } from "primereact/dropdown";
 
 import "./Seasons.css";
 
-import { ProgressSpinner } from "primereact/progressspinner";
-import { Dropdown } from "primereact/dropdown";
+import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner.element";
 
 import loader from "./Seasons.loader";
 
-const Seasons = () => {
-  const [selectedCity, setSelectedCity] = useState(null);
-  const cities = [
-    { name: "New York", code: "NY" },
-    { name: "Rome", code: "RM" },
-    { name: "London", code: "LDN" },
-    { name: "Istanbul", code: "IST" },
-    { name: "Paris", code: "PRS" },
-  ];
+const Seasons: FC = () => {
+  const [selectedSeason, setSelectedSeason] = useState<string>("");
 
   const { data, isPending, isError, error } = useQuery({
     queryKey: ["seasons"],
@@ -28,25 +21,17 @@ const Seasons = () => {
   console.log(data, isPending, isError, error);
 
   if (isPending) {
-    return (
-      <ProgressSpinner
-        style={{ width: "50px", height: "50px" }}
-        strokeWidth="8"
-        fill="var(--surface-ground)"
-        animationDuration=".5s"
-      />
-    );
+    return <LoadingSpinner />;
   }
 
   return (
     <div>
       <div className="card">
         <Dropdown
-          value={selectedCity}
-          onChange={(e) => setSelectedCity(e.value)}
-          options={cities}
-          optionLabel="name"
-          placeholder="Select a City"
+          value={selectedSeason}
+          onChange={(e) => setSelectedSeason(e.value)}
+          options={data}
+          placeholder="Select a Season"
           className="w-full md:w-14rem"
         />
       </div>
