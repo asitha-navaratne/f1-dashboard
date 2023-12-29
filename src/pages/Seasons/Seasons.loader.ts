@@ -10,5 +10,7 @@ export default async function loader({
 }) {
   const response = await AxiosInstance.get("/seasons", { signal: signal });
 
-  return CheckResponseForErrors(response).data;
+  const result = CheckResponseForErrors(response);
+
+  return result.data.response;
 }
