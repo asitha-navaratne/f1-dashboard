@@ -6,6 +6,7 @@ main {
   position: relative;
   top: 0vh;
   left: -2.5vw;
+  padding: 5px;
 }
 
 .layout {

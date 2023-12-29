@@ -6,7 +6,7 @@ class ApiException extends Error {
     Object.setPrototypeOf(this, ApiException.prototype);
   }
 
-  code: number = 400;
+  code = 400;
 }
 
 export default ApiException;
