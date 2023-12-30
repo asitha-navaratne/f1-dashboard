@@ -3,7 +3,7 @@ import { FC, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Dropdown } from "primereact/dropdown";
 
-import "./Seasons.css";
+import styles from "./Seasons.module.css";
 
 import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner.element";
 
@@ -26,7 +26,7 @@ const Seasons: FC = () => {
 
   return (
     <div>
-      <div className="card">
+      <div className={styles["seasons"]}>
         <Dropdown
           value={selectedSeason}
           onChange={(e) => setSelectedSeason(e.value)}
