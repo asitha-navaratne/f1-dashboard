@@ -26,15 +26,13 @@ const Seasons: FC = () => {
 
   return (
     <div>
-      <div className={styles["seasons"]}>
-        <Dropdown
-          value={selectedSeason}
-          onChange={(e) => setSelectedSeason(e.value)}
-          options={data}
-          placeholder="Select a Season"
-          className="w-full md:w-14rem"
-        />
-      </div>
+      <Dropdown
+        value={selectedSeason}
+        onChange={(e) => setSelectedSeason(e.value)}
+        options={data}
+        placeholder="Select a Season"
+        className={`${styles["seasons"]} w-full md:w-14rem`}
+      />
     </div>
   );
 };
